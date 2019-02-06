@@ -1,0 +1,142 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas');
+
+/* .card-img:hover {
+  -ms-transform: scale(1.5); /* IE 9
+  -webkit-transform: scale(1.5); /* Safari 3-8
+  transform: scale(1.5);
+} */
+#modal-four {
+  overflow: auto;
+}
+
+input {
+  background-color: inherit;
+}
+
+button {
+  font-variant: small-caps;
+}
+
+.navbar-brand {
+  font-variant: small-caps;
+}
+
+.modal-content {
+  background-color: rgba(192, 192, 192, 0.3);
+  color: white;
+  font-variant: small-caps;
+}
+
+.footer {
+  border-style: solid;
+  background-color: rgba(192, 192, 192, 0.7);
+}
+
+.div-footer {
+  background-color: rgba(192, 192, 192, 0.7);
+  font-variant: small-caps;
+  justify-content: space-between;
+}
+
+.smicons {
+  // border-style: solid;
+  display: inline-block;
+  position: relative;
+  // text-align: center;
+  width: 300px;
+}
+
+.savings-msg {
+  color: white;
+}
+
+.nav-item {
+  font-variant: small-caps;
+  align-content: center;
+  margin: auto;
+}
+
+.table {
+  // border: 1px solid black;
+  color: black;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+#jumbo {
+  align-items: center;
+  background-color: #edeaea;
+  // background-image: url('../public/image/redDress.jpg');
+  background-repeat: no-repeat;
+  display: flex;
+  margin: auto;
+  padding: 0;
+}
+
+#carouselExampleIndicators {
+  padding: 0;
+}
+
+h1 {
+  font-variant: small-caps;
+  position: sticky;
+}
+// to denter vid carousel
+// .carousel {
+//   margin: auto;
+// }
+
+.banner__video {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card-body {
+  text-align: center;
+}
+
+#jetList {
+  margin: auto;
+  width: 75%;
+}
+
+#message2 {
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 100;
+}
+
+#viewDress {
+  float: center;
+}
+
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-duration: 0.6s;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right,
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+  opacity: 0;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev,
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active {
+  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
+}
