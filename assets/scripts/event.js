@@ -44,7 +44,7 @@ const onSignOut = event => {
 const onMbrSign = event => {
   event.preventDefault()
   // console.log('mrbsign clicked')
-  $('#mbrsign').text('You are now an exclusive member of this fictional company!')
+  $('#mbrsign').text('You are now an exclusive member of GetJets!')
   // $('#sign-up').trigger('reset')
 }
 

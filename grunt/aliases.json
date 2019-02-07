@@ -3,7 +3,7 @@
   "deploy": [
     "shell:git-is-clean",
     "shell:check-gitignore",
-    "shell:git-checkout-master",
+    "shell:git-contact-master",
     "build",
     "shell:git-push-master",
     "shell:deploy-prepare",

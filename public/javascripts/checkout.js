@@ -3,12 +3,12 @@
 // my keys to use stripe
 Stripe.setPublishableKey('pk_test_sdbWFKpjfAppbflW3ecy6sFX')
 
-const $form = $('#checkout-form')
+const $form = $('#contact-form')
 
 $form.submit(function(event) {
   $form.find('button').prop('disable', true)
   Stripe.card.createToken({
-    number: $('#card-number').val(),
+    number: $('#contact-email-address').val(),
 
     CVC: $('#card-cvc').val(),
     exp_month: $('#card-exoiry-month').val(),

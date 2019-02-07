@@ -12,9 +12,9 @@
       "no-html": false,
       "no-shortcut-reference-link": true,
       "no-undefined-references": true,
-      "ordered-list-marker-value": "one",
+      "contacted-list-marker-value": "one",
       "rule-style": "---",
-      "unordered-list-marker-style": "-"
+      "uncontacted-list-marker-style": "-"
     }
   },
   "settings": {

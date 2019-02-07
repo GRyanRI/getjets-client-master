@@ -1,11 +1,11 @@
 'use strict'
 const store = require('./../store.js')
 
-const getWomensClothingSuccess = function (data) {
+const getJetsSuccess = function (data) {
   $('#jetList').html('')
   $('#jumbo').fadeOut('slow')
   let content = '<div class="row">'
-  store.womensJet = data.jets
+  store.jet = data.jets
   const dataArray = data.jets
   dataArray.forEach(function (jet) {
     const imgurUrl = jet.image
@@ -15,10 +15,10 @@ const getWomensClothingSuccess = function (data) {
         <div class="card-body" id="imageDivalso">
           <h5 class="card-title"></h5>
           <img class="card-img" src='${imgurUrl}.jpg' alt="Card image">
-          <form class="add-to-contact-women" id="${jet._id}">
+          <form class="add-to-contact-jet" id="${jet._id}">
             <p class="card-text">${jet.name}</p>
             <p class="card-text">$${jet.price}</p>
-            <button class="btn btn-dark add-to-contact-women">Add to contact</button>
+            <button class="btn btn-dark add-to-contact-jet">Add to contact</button>
             </form>
         </div>
       </div>
@@ -32,34 +32,7 @@ const getWomensClothingSuccess = function (data) {
   $('#jetList').html(content)
 }
 
-const getMensClothingSuccess = function (data) {
-  $('#jetList').html('')
-  $('#jumbo').fadeOut('slow')
-  let content = '<div class="row">'
-  store.mensJet = data.jets
-  const dataArray = data.jets
-  dataArray.forEach(function (jet) {
-    const imgurUrl = jet.image
-    content += `<div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <img class="card-img" src='${imgurUrl}.jpg' alt="Card image">
-          <form class="add-to-contact-men" id="${jet._id}">
-            <p class="card-text">${jet.name}</p>
-            <p class="card-text">$${jet.price}</p>
-            <button class="btn btn-dark add-to-contact-men">Add to contact</button>
-            </form>
-        </div>
-      </div>
-    </div>`
-    // console.log(jet._id)
-    // console.log(jet.image)
-  })
-  $('#jetList').html(content)
-}
-
-const checkoutSuccess = data => {
+const contactSuccess = data => {
   // console.log(data)
 }
 
@@ -78,16 +51,16 @@ const viewContactFailure = () => {
   // console.error('viewContactFailure ran. Error is :', error)
 }
 
-const orderHistSuccess = data => {
+const contactHistSuccess = data => {
   // let sum = 0
   let content = '<table class="table">'
-  // iterate through data.orders to get created date
+  // iterate through data.contacts to get created date
   // debugger
-  data.orders.forEach(function (order) {
+  data.contacts.forEach(function (contact) {
     content += `<tr>
-      <td class="orderCreatedAt">Order #: ${order.createdAt}</td>
+      <td class="contactCreatedAt">Contact #: ${contact.createdAt}</td>
   </tr>`
-    order.contact.forEach(function (jet) {
+    contact.contact.forEach(function (jet) {
     // nested iteration through contact
     // now you can access properties using dot notation in contact (.name.price)
     // add to sum, sum = 0
@@ -101,22 +74,21 @@ const orderHistSuccess = data => {
       // jet[i].price + jet[i+1].price
     })
   })
-  $('#orderHistMsg').text('Your current order history')
-  $('#orderHistBody').append(content)
+  $('#contactHistMsg').text('Your current contact history')
+  $('#contactHistBody').append(content)
   // console.log(data)
 }
 
-const orderHistFailure = () => {
-  $('#orderHistMsg').text('Unable to Generate Order History')
-  // console.error('orderHistFailure ran> Error is :', error)
+const contactHistFailure = () => {
+  $('#contactHistMsg').text('Unable to Generate Contact History')
+  // console.error('contactHistFailure ran> Error is :', error)
 }
 
 module.exports = {
-  checkoutSuccess,
-  getWomensClothingSuccess,
-  getMensClothingSuccess,
+  contactSuccess,
+  getJetsSuccess,
   viewContactSuccess,
   viewContactFailure,
-  orderHistSuccess,
-  orderHistFailure
+  contactHistSuccess,
+  contactHistFailure
 }

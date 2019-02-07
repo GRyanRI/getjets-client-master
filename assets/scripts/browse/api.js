@@ -3,16 +3,9 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const womensClothingApi = function () {
+const jetsAPI = function () {
   return $.ajax({
-    url: config.apiUrl + '/jets/womens-clothing',
-    method: 'GET'
-  })
-}
-
-const mensClothingApi = function () {
-  return $.ajax({
-    url: config.apiUrl + '/jets/mens-clothing',
+    url: config.apiUrl + '/jets/all-jets',
     method: 'GET'
   })
 }
@@ -33,62 +26,9 @@ const addToContact = data => {
 //   })
 }
 
-const checkout = (data) => {
-  // console.log(data)
-  // send a post to orders with jet info
-  return $.ajax({
-    url: config.apiUrl + '/orders',
-    method: 'POST',
-    contentType: 'application/json',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
-const orderHistoryApi = function () {
-  return $.ajax({
-    url: config.apiUrl + '/orders',
-    method: 'GET',
-    contentType: 'application/json',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-// using stripe documentation to checkout
-// const checkout = event => {
-//   console.log(event.target)
-// }
-
-// const getAllJets = event => {
-//   console.log('getAllJets', store.user)
-//   return $.ajax({
-//     url: config.apiUrl + '/jets',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: {}
-//   })
-// }
-//
-// const getAJet = event => {
-//   console.log(event.target)
-//   console.log(event.target.id)
-//   return $.ajax({
-//     url: config.apiUrl + '/jets/:id',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
 module.exports = {
   addToContact,
-  womensClothingApi,
-  mensClothingApi,
-  orderHistoryApi,
-  checkout
+  jetsAPI,
+  contactHistoryApi,
+  contact
 }

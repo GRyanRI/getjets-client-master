@@ -34,13 +34,13 @@ module.exports = {
     // by the build process and exit all remaining build steps
     command: 'git push origin master || (git clean -f && false)'
   },
-  'git-checkout-master': {
-    command: 'git checkout master'
+  'git-contact-master': {
+    command: 'git contact master'
   },
   'deploy-prepare': {
     command: [
       'git branch -D gh-pages || echo "so not removed"',
-      'git checkout --orphan gh-pages',
+      'git contact --orphan gh-pages',
       'git rm --cached \'*\''
     ].join(' && ')
   },
@@ -51,7 +51,7 @@ module.exports = {
       'git commit -m "deploy task"',
       'git push origin gh-pages --force',
       'git clean -x -d --force --exclude=node_modules',
-      'git checkout master'
+      'git contact master'
     ].join(' && ')
   }
 }

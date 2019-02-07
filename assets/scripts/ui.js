@@ -12,13 +12,9 @@ $('#home').click(function () {
   $('#homeContent').show()
   $('#jets').hide()
 })
-$('#PaymentInfo').click(function () {
-  $('#paymentContent').show()
-})
 $('#ViewContact').click(function () {
   $('#contactContent').show()
 })
-
 $('#jetList').click(function () {
   $('#jets').show()
 })
@@ -61,7 +57,7 @@ const signUpFailure = () => {
 const signInSuccess = data => {
   store.user = data.user
   $('#message2').fadeIn(500)
-  $('#message2').text('Signed in successfully')
+  $('#message2').text('Signed in!')
   $('#message2').fadeOut(3000)
   $('#message').removeClass()
   $('#message').addClass('success')
