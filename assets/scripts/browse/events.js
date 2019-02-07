@@ -56,7 +56,7 @@ const onRetrieve = (event) => {
 
 const onGetJets = event => {
   event.preventDefault()
-  api.jetsClothingApi()
+  api.jetsApi()
     .then(ui.getJetsSuccess)
     // .then($('.add-to-favorite').on('click', onAddToFavorite))
     // .then($('#jetList').on('click', '.add-to-favorite', onAddToFavorite))
@@ -65,7 +65,7 @@ const onGetJets = event => {
 
 module.exports = {
   onGetJets,
-  onAddToFavoriteJet,
+  onAddToFavorite,
   onContact,
   onRetrieve
 }
