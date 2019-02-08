@@ -3,7 +3,7 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const jetsAPI = function () {
+const jetsApi = function() {
   return $.ajax({
     url: config.apiUrl + '/jets/all-jets',
     method: 'GET'
@@ -22,11 +22,11 @@ const addToContact = data => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: ({contact: {items: store.contact.items}})
+    data: { contact: { items: store.contact.items } }
   })
 }
 
 module.exports = {
   addToContact,
-  jetsAPI
+  jetsApi
 }

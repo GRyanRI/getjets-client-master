@@ -16,7 +16,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#mbrsign').on('submit', authEvents.onMbrSign)
   $('#jets').on('click', browseEvents.onGetJets)
-  $('#jetList').on('submit', '.add-to-contact-jet', browseEvents.onAddToContact)
+  // $('#jetList').on('submit', '.add-to-contact-jet', browseEvents.onAddToContact)
   $('#contact').on('click', browseEvents.onContact)
   $('#contactHist').on('click', browseEvents.onRetrieve)
 })
