@@ -9,7 +9,7 @@ const apiUrls = {
 if (window.location.hostname === 'localhost') {
   apiUrl = apiUrls.development
 } else {
-  apiUrl = apiUrls.jet
+  apiUrl = apiUrls.production
 }
 
 module.exports = {
